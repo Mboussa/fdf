@@ -6,12 +6,22 @@
 /*   By: moboussa <moboussa@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/14 12:05:18 by moboussa     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/18 14:44:33 by moboussa    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/01/18 18:14:13 by moboussa    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int				ft_count_split_elems(char **split)
+{
+	int			i;
+
+	i = 0;
+	while (split[i])
+		i++;
+	return (i);
+}
 
 static int		ft_countwords(char *str, char c)
 {

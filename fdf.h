@@ -6,7 +6,7 @@
 /*   By: moboussa <moboussa@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/01/11 14:33:40 by moboussa     #+#   ##    ##    #+#       */
-/*   Updated: 2019/01/17 13:57:20 by moboussa    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/01/18 18:10:52 by moboussa    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -20,7 +20,7 @@
 # include "fcntl.h"
 # include <math.h>
 # include "./libft/libft.h"
-//# include "./minilibx_macos/mlx.h"
+# include "./minilibx_macos/mlx.h"
 
 typedef struct	s_window
 {
@@ -41,7 +41,7 @@ typedef struct	s_parse
 	int			col;
 	int			line;
 	int			nbr;
-	t_pos		*data;
+	int			**data;
 }				t_parse;
 
 int				ft_count_nbr(char *str);
@@ -49,7 +49,7 @@ int				ft_count_line(char *str);
 char			*takefile(int fd);
 void			fill_parse(t_parse *p, char *str);
 int				**char_to_int(char **tab, t_parse *p);
-void			fill_data(t_parse *p, int **tab);
+int			fill_data(t_parse *p, char *str);
 void			init_window(t_window *w);
 
 #endif
