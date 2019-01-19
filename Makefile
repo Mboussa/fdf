@@ -6,7 +6,7 @@
 #    By: moboussa <moboussa@student.le-101.fr>      +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/01/11 14:04:06 by moboussa     #+#   ##    ##    #+#        #
-#    Updated: 2019/01/18 17:21:36 by moboussa    ###    #+. /#+    ###.fr      #
+#    Updated: 2019/01/19 13:20:40 by moboussa    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -17,7 +17,8 @@ NAME = fdf
 
 SRC = ft_main.c \
 	ft_readfile.c \
-	ft_parsing.c
+	ft_parsing.c \
+	ft_graph.c
 
 LIB = libft/libft.a
 
@@ -25,7 +26,7 @@ MLX = minilibx_macos/libmlx.a
 
 OBJ = $(SRC:.c=.o)
 
-FLAGS = -Wall -Wextra -Werror -fsanitize=address
+FLAGS = -Wall -Wextra -Werror
 
 
 all: $(NAME)
