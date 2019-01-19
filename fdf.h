@@ -6,7 +6,7 @@
 /*   By: moboussa <moboussa@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/01/11 14:33:40 by moboussa     #+#   ##    ##    #+#       */
-/*   Updated: 2019/01/18 18:10:52 by moboussa    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/01/19 10:41:52 by moboussa    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -28,13 +28,13 @@ typedef struct	s_window
 	void		*win_ptr;
 }				t_window;
 
-typedef struct	s_pos
+typedef struct	s_vec
 {
 	int			x;
 	int			y;
 	int			z;
 
-}				t_pos;
+}				t_vec;
 
 typedef struct	s_parse
 {

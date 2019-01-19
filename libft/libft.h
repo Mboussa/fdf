@@ -6,7 +6,7 @@
 /*   By: moboussa <moboussa@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/02 13:06:05 by moboussa     #+#   ##    ##    #+#       */
-/*   Updated: 2019/01/18 18:14:30 by moboussa    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/01/19 10:41:07 by moboussa    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -89,7 +89,7 @@ int					get_next_line(const int fd, char **line);
 char				*gnl_readfile(int fd, char *str);
 void				free_tab_char(char **tab);
 void				free_tab_int(int **tab, int size);
-void				ft_realloc(char **dst, char *src);
+char				*ft_realloc(char *str, size_t size);
 int					ft_count_split_elems(char **split);
 
 #endif
