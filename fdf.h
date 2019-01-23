@@ -6,7 +6,7 @@
 /*   By: moboussa <moboussa@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/01/11 14:33:40 by moboussa     #+#   ##    ##    #+#       */
-/*   Updated: 2019/01/19 15:07:17 by moboussa    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/01/23 09:38:20 by moboussa    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -14,6 +14,8 @@
 #ifndef FDF_H
 # define FDF_H
 # define BUFF_SIZE 1000
+# define WIDTH 900
+# define HEIGHT 1600
 
 # include <unistd.h>
 # include <stdio.h>
@@ -22,33 +24,46 @@
 # include "./libft/libft.h"
 # include "./minilibx_macos/mlx.h"
 
-typedef struct	s_window
+typedef struct		s_window
 {
-	void		*mlx_ptr;
-	void		*win_ptr;
-}				t_window;
+	void			*mlx_ptr;
+	void			*win_ptr;
+}					t_window;
 
-typedef struct	s_image
+typedef struct		s_image
 {
-	void		*image;
-	char		*data;
-	int			bpp;
-	int			s_l;
-	int			endian;
-}				t_image;
+	void			*image;
+	char			*data;
+	int				bpp;
+	int				s_l;
+	int				endian;
+}					t_image;
+
+typedef struct		s_color
+{
+	unsigned char	r;
+	unsigned char	g;
+	unsigned char	b;
+	unsigned char	a;
+}					t_color;
 
 typedef struct	s_parse
 {
 	int			col;
 	int			line;
 	int			nbr;
+	int			zoom;
+	float		elevation;
 	int			**data;
 	t_image		image;
+	t_window	window;
 }				t_parse;
 
 char			*takefile(int fd);
 int				fill_data(t_parse *p, char *str);
-void			line(t_window *w, int i, int j);
-void			init_window(t_window *w);
+void			fill_vec(t_parse *p);
+void			line(t_parse *p, t_color color, int i, int j, int i1, int j1);
+void			create_image(t_parse *p);
+void			init_window(t_parse *p);
 
 #endif

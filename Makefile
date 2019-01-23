@@ -6,7 +6,7 @@
 #    By: moboussa <moboussa@student.le-101.fr>      +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/01/11 14:04:06 by moboussa     #+#   ##    ##    #+#        #
-#    Updated: 2019/01/19 13:20:40 by moboussa    ###    #+. /#+    ###.fr      #
+#    Updated: 2019/01/21 17:27:30 by moboussa    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -26,7 +26,7 @@ MLX = minilibx_macos/libmlx.a
 
 OBJ = $(SRC:.c=.o)
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra
 
 
 all: $(NAME)
