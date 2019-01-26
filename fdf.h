@@ -6,7 +6,7 @@
 /*   By: moboussa <moboussa@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/01/11 14:33:40 by moboussa     #+#   ##    ##    #+#       */
-/*   Updated: 2019/01/24 19:55:34 by moboussa    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/01/26 13:37:56 by moboussa    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -55,6 +55,8 @@ typedef struct	s_parse
 	int			zoom;
 	int			mouv_x;
 	int			mouv_y;
+	float		angle_x;
+	float		angle_y;
 	float		elevation;
 	int			**data;
 	t_image		image;
