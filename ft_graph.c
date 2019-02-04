@@ -6,12 +6,24 @@
 /*   By: moboussa <moboussa@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/01/19 12:34:30 by moboussa     #+#   ##    ##    #+#       */
-/*   Updated: 2019/01/24 14:42:20 by moboussa    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/02/04 18:30:24 by moboussa    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+void		init_window(t_parse *p)
+{
+	p->window.mlx_ptr = mlx_init();
+	p->window.win_ptr = mlx_new_window(p->window.mlx_ptr, HEIGHT, WIDTH, "Moboussa - fdf");
+	p->elevation = 0;
+	p->zoom = 5;
+	p->mouv_x = 0;
+	p->mouv_y = 0;
+	p->angle_x = 0;
+	p->projection = 0;
+}
 
 void	create_image(t_parse *p)
 {
@@ -32,29 +44,30 @@ void	ft_put_pixel(t_parse *p, t_color color, int x, int y)
 	}
 }
 
-void	line(t_parse *p, t_color color, int i, int j, int i1, int j1)
+void	line(t_parse *p, t_color color)
 {
-	int dx = abs(i1 - i);
-	int sx = i < i1 ? 1 : -1;
-	int dy = abs(j1 - j);
-	int sy = j < j1 ? 1 : -1; 
-	int err = (dx > dy ? dx : -dy) / 2;
 	int e2;
+
+	p->bres.dx = abs(p->x1 - p->x);
+	p->bres.sx = p->x < p->x1 ? 1 : -1;
+	p->bres.dy = abs(p->y1 - p->y);
+	p->bres.sy = p->y < p->y1 ? 1 : -1;
+	p->bres.err = (p->bres.dx > p->bres.dy ? p->bres.dx : -p->bres.dy) / 2;
 	while (1)
 	{
-		ft_put_pixel(p, color, i, j);
-		if (i == i1 && j == j1)
+		ft_put_pixel(p, color, p->x, p->y);
+		if (p->x == p->x1 && p->y == p->y1)
 			break;
-		e2 = err;
-		if (e2 >-dx)
+		e2 = p->bres.err;
+		if (e2 >-p->bres.dx)
 		{
-			err -= dy;
-			i += sx;
+			p->bres.err -= p->bres.dy;
+			p->x += p->bres.sx;
 		}
-		if (e2 < dy)
+		if (e2 < p->bres.dy)
 		{
-			err += dx;
-			j += sy;
+			p->bres.err += p->bres.dx;
+			p->y += p->bres.sy;
 		}
 	}
 }
