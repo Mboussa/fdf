@@ -6,7 +6,7 @@
 /*   By: moboussa <moboussa@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/01/11 14:32:51 by moboussa     #+#   ##    ##    #+#       */
-/*   Updated: 2019/02/02 09:37:11 by moboussa    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/02/05 19:01:19 by moboussa    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -28,7 +28,7 @@ char		*takefile(int fd)
 	return (str);
 }
 
-double		ft_isometric_x(int x, int y)
+double		iso_x(int x, int y)
 {
 	double x_iso;
 
@@ -36,7 +36,7 @@ double		ft_isometric_x(int x, int y)
 	return (x_iso);
 }
 
-double		ft_isometric_y(int x, int y, int z)
+double		iso_y(int x, int y, int z)
 {
 	double y_iso;
 

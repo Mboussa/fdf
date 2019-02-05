@@ -6,7 +6,7 @@
 /*   By: moboussa <moboussa@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/01/19 12:34:30 by moboussa     #+#   ##    ##    #+#       */
-/*   Updated: 2019/02/04 18:30:24 by moboussa    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/02/05 18:57:25 by moboussa    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,11 +17,12 @@ void		init_window(t_parse *p)
 {
 	p->window.mlx_ptr = mlx_init();
 	p->window.win_ptr = mlx_new_window(p->window.mlx_ptr, HEIGHT, WIDTH, "Moboussa - fdf");
-	p->elevation = 0;
-	p->zoom = 5;
-	p->mouv_x = 0;
-	p->mouv_y = 0;
-	p->angle_x = 0;
+	p->up = 0;
+	p->z = 5;
+	p->mvx = 0;
+	p->mvy = 0;
+	p->ang_x = 0;
+	p->ang_y = 0;
 	p->projection = 0;
 }
 
