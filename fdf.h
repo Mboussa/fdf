@@ -6,7 +6,7 @@
 /*   By: moboussa <moboussa@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/01/11 14:33:40 by moboussa     #+#   ##    ##    #+#       */
-/*   Updated: 2019/02/05 18:59:37 by moboussa    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/02/18 12:53:57 by moboussa    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -67,6 +67,7 @@ typedef struct	s_parse
 	float		ang_x;
 	float		ang_y;
 	float		up;
+	char		color;
 	int			**data;
 	int			x;
 	int			y;
@@ -76,9 +77,11 @@ typedef struct	s_parse
 	t_image		image;
 	t_window	window;
 	t_bres		bres;
+	t_color		base;
 }				t_parse;
 
 char			*takefile(int fd);
+int				ft_er(t_parse *p, char	*str);
 int				fill_data(t_parse *p, char *str);
 void			fill_vec(t_parse *p);
 void			line(t_parse *p, t_color color);
@@ -86,20 +89,29 @@ void			create_image(t_parse *p);
 void			init_window(t_parse *p);
 void			ft_put_pixel(t_parse *p, t_color color, int x, int y);
 int				push_key(int key, void *param);
+void			init_var(t_parse *p);
 void			main_loop(t_parse *p);
-double			iso_x(int x, int y);
-double			iso_y(int x, int y, int z);
-void			trace_line_c1(t_parse *p, t_color color);
-void			trace_line_c2(t_parse *p, t_color color);
-void			trace_line_i1(t_parse *p, t_color color);
-void			trace_line_i2(t_parse *p, t_color color);
+double			iso_x(int x, int y, t_parse *p);
+double			iso_y(int x, int y, int z, t_parse *p);
+double			cav_x(int x, int z, t_parse *p);
+double			cav_y(int y, int z, t_parse *p);
+void			trace_line_c1(t_parse *p);
+void			trace_line_c2(t_parse *p);
+void			trace_line_i1(t_parse *p);
+void			trace_line_i2(t_parse *p);
 void			display_p(t_parse *p);
 void			display_i(t_parse *p);
 void			rotation_zoom_c1(t_parse *p, t_color color);
 void			rotation_zoom_c2(t_parse *p, t_color color);
 void			rotation_zoom_i1(t_parse *p, t_color color);
 void			rotation_zoom_i2(t_parse *p, t_color color);
+void			ft_display_menu(t_parse *p);
 
+# define A 0
+# define B 11
+# define D 2
+# define G 5
+# define R 15
 # define W 13
 # define S 1
 # define ECHAP 53
