@@ -6,7 +6,7 @@
 /*   By: moboussa <moboussa@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/01/21 13:44:19 by moboussa     #+#   ##    ##    #+#       */
-/*   Updated: 2019/02/18 12:54:09 by moboussa    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/02/18 15:55:04 by moboussa    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -85,7 +85,6 @@ void		main_loop(t_parse *p)
 	p->image.ptr, 0, 0);
 	ft_display_menu(p);
 	mlx_hook(p->window.win_ptr, 2, 0, push_key, p);
-	mlx_hook(p->window.win_ptr, 5, 0, push_key, p);
 	mlx_loop(p->window.mlx_ptr);
 }
 
